@@ -40,7 +40,7 @@ cd NodeJs
 npm start
 
 
-# to run frontend - 
+#To run frontend - 
 
 npm start dev
 
