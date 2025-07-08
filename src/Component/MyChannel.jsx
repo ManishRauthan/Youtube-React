@@ -33,7 +33,6 @@ function MyChannel() {
       .then(() => {
         alert("Video added successfully 🎉");
         setShowForm(false);
-        window.location.reload(); // 🔁 reload after adding
       })
       .catch((err) => console.error("Upload error", err));
   };
@@ -47,7 +46,6 @@ function MyChannel() {
       .then((res) => res.json())
       .then(() => {
         alert("Video deleted!");
-        window.location.reload(); // 🔁 reload after delete
       })
       .catch((err) => console.error("Delete error", err));
   };

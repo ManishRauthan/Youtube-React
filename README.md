@@ -15,6 +15,7 @@ Welcome to the Capstone Project – a full-featured **YouTube Clone** built usin
 ---
 
 ## 📁 Project Structure
+
 /CapstoneProject
 │
 ├── /NodeJs # Express backend
@@ -32,15 +33,11 @@ Welcome to the Capstone Project – a full-featured **YouTube Clone** built usin
 │
 └── README.md # This file
 
-
-
-## To run backend - 
+## To run backend -
 
 cd NodeJs
 npm start
 
-
-#To run frontend - 
+#To run frontend -
 
 npm start dev
-
