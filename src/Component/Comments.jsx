@@ -7,7 +7,7 @@ function Comment({ details }) {
   // Adding new comment
   const handleAddComment = () => {
     if (!newComment.trim()) return;
-    fetch(`http://localhost:5100/api/comment/${details.id}`, {
+    fetch(`https://youtube-api-6auv.onrender.com/api/comment/${details.id}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -26,14 +26,17 @@ function Comment({ details }) {
   const handleEditComment = (index) => {
     const updated = prompt("Edit your comment", comments[index].comment);
     if (updated && updated !== comments[index].comment) {
-      fetch(`http://localhost:5100/api/comment/${details.id}/${index}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: comments[index].name,
-          comment: updated,
-        }),
-      })
+      fetch(
+        `https://youtube-api-6auv.onrender.com/api/comment/${details.id}/${index}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: comments[index].name,
+            comment: updated,
+          }),
+        }
+      )
         .then((res) => res.json())
         .then((updatedComments) => setComments(updatedComments));
     }
@@ -41,9 +44,12 @@ function Comment({ details }) {
 
   //   Delete Comment
   const handleDeleteComment = (index) => {
-    fetch(`http://localhost:5100/api/comment/${details.id}/${index}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://youtube-api-6auv.onrender.com/api/comment/${details.id}/${index}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((updatedComments) => setComments(updatedComments));
   };
