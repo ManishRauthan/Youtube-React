@@ -11,8 +11,14 @@ function Header({ onSearch, valueChange }) {
   // To persist login across refreshes
   useEffect(() => {
     const savedUser = localStorage.getItem("user");
-    if (savedUser) {
-      setUser(JSON.parse(savedUser)); //  Automatically show name if user is in localStorage
+    try {
+      const parsed =
+        savedUser && savedUser !== "undefined" ? JSON.parse(savedUser) : null;
+      setUser(parsed);
+    } catch (err) {
+      console.error("Error parsing saved user:", err);
+      setUser(null);
+      localStorage.removeItem("user");
     }
   }, []);
 
@@ -34,7 +40,7 @@ function Header({ onSearch, valueChange }) {
 
   return (
     <>
-      {/* Login Popup */}
+      Login Popup
       {showLogin && (
         <div className="fixed inset-0  bg-opacity-50 flex justify-center items-center z-50">
           <Login
@@ -47,7 +53,6 @@ function Header({ onSearch, valueChange }) {
           />
         </div>
       )}
-
       {/* Header */}
       <div className=" bg-[#0f0f0f] fixed top-0 left-0 w-full z-10 flex justify-between p-2">
         <div className="flex items-center gap-2">

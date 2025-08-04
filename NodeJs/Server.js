@@ -16,7 +16,9 @@ app.listen(5100, () => {
   console.log("Server is running on port 5100");
 });
 
-mongoose.connect("mongodb://localhost:27017/YouTube");
+mongoose.connect(
+  "mongodb+srv://Manish:TbBn5Tv4DpvkZbYY@cluster0.bsdabfm.mongodb.net/"
+);
 
 const db = mongoose.connection;
 
