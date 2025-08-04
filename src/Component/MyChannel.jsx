@@ -24,7 +24,7 @@ function MyChannel() {
       return;
     }
 
-    fetch("http://localhost:5100/api/mychannel/newvideo", {
+    fetch("https://youtube-api-6auv.onrender.com/api/mychannel/newvideo", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -40,7 +40,7 @@ function MyChannel() {
   const handleDelete = (id) => {
     if (!window.confirm("Are you sure you want to delete this video?")) return;
 
-    fetch(`http://localhost:5100/api/mychannel/videos/${id}`, {
+    fetch(`https://youtube-api-6auv.onrender.com/api/mychannel/videos/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
