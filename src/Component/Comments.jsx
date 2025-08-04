@@ -70,7 +70,7 @@ function Comment({ details }) {
         />
         <button
           onClick={handleAddComment}
-          className="bg-white text-black px-4 py-1 rounded-lg font-semibold"
+          className="bg-white text-black px-4 py-1 rounded-lg font-semibold cursor-pointer"
         >
           Post
         </button>
@@ -85,13 +85,13 @@ function Comment({ details }) {
               <div className="font-semibold">{cmt.name}</div>
               <button
                 onClick={() => handleEditComment(index)}
-                className="ml-auto text-sm bg-white text-black px-2 py-1 rounded-md"
+                className="ml-auto text-sm bg-white text-black px-2 py-1 rounded-md cursor-pointer"
               >
                 Edit
               </button>
               <button
                 onClick={() => handleDeleteComment(index)}
-                className="ml-2 text-sm bg-red-600 text-white px-2 py-1 rounded-md"
+                className="ml-2 text-sm bg-red-600 text-white px-2 py-1 rounded-md cursor-pointer"
               >
                 Delete
               </button>

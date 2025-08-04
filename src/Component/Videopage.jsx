@@ -51,7 +51,7 @@ function Videopage() {
                       {videotobeplayed.Subscribercount}
                     </div>
                   </div>
-                  <button className="bg-white text-black w-25 h-8 rounded-4xl ml-6">
+                  <button className="bg-white text-black w-25 h-8 rounded-4xl ml-6 cursor-pointer">
                     Subscribe
                   </button>
                 </div>
@@ -62,36 +62,36 @@ function Videopage() {
                   <div className="flex">
                     <img
                       src="/img/Videopage/Thumbsup.png"
-                      className="h-5"
+                      className="h-5 cursor-pointer"
                     ></img>
                     <h2 className="">{videotobeplayed.likes}</h2>
                   </div>
 
                   <img
                     src="\img\Videopage\Thumbsdown.png"
-                    className="h-5"
+                    className="h-5 cursor-pointer"
                   ></img>
                 </div>
                 <div className="flex space-x-3 w-22 h-8 bg-[#494949]  justify-center items-center rounded-4xl">
-                  <div className="flex space-x-1">
-                    <img src="/img/Videopage/Share.png" className="h-5"></img>
+                  <div className="flex space-x-1 cursor-pointer">
+                    <img src="/img/Videopage/Share.png" className="h-5 "></img>
                     <h2 className="">Share</h2>
                   </div>
                 </div>
                 <div className="flex space-x-3 w-20 h-8 bg-[#494949]  justify-center items-center rounded-4xl">
-                  <div className="flex space-x-1">
+                  <div className="flex space-x-1 cursor-pointer">
                     <img src="/img/Videopage/Clips.png" className="h-5"></img>
                     <h2 className="">Clips</h2>
                   </div>
                 </div>
                 <div className="flex space-x-3 w-20 h-8 bg-[#494949]  justify-center items-center rounded-4xl">
-                  <div className="flex space-x-1">
+                  <div className="flex space-x-1 cursor-pointer">
                     <img src="/img/Videopage/Save.png" className="h-5"></img>
                     <h2 className="">Save</h2>
                   </div>
                 </div>
                 <div className="flex space-x-3 w-8 h-8 bg-[#494949]  justify-center items-center rounded-4xl">
-                  <div>
+                  <div className="cursor-pointer">
                     <img src="/img/Videopage/Options.png" className="h-4"></img>
                   </div>
                 </div>
@@ -110,28 +110,32 @@ function Videopage() {
           </div>
         </div>
         {/*Youtube Video Recommendation Part */}
-        <div className="flex flex-col bg-[#0f0f0f] w-1/5">
+        <div className="flex flex-col bg-[#0f0f0f] w-1/5 cursor-pointer ">
+          {/* <Link to={`/videopage/${recommendvideo.id}`}> */}
           {recommendvideos.map((recommendvideo) => (
-            <div key={recommendvideo._id} className="flex mt-2">
-              <img
-                src={recommendvideo.thumbnailUrl}
-                alt={recommendvideo.title}
-                className="w-max h-25 rounded-2xl"
-              />
+            <Link to={`/videopage/${recommendvideo.id}`}>
+              <div key={recommendvideo._id} className="flex mt-2">
+                <img
+                  src={recommendvideo.thumbnailUrl}
+                  alt={recommendvideo.title}
+                  className="w-60 h-25 rounded-2xl"
+                />
 
-              <div>
-                <div className="text-gray-400 ml-2  flex flex-col gap-y-1">
-                  <div className="font-semibold text-white">
-                    {recommendvideo.title.length > 20
-                      ? recommendvideo.title.slice(0, 30) + ".."
-                      : recommendvideo.title}
+                <div>
+                  <div className="text-gray-400 ml-2  flex flex-col gap-y-1">
+                    <div className="font-semibold text-white">
+                      {recommendvideo.title.length > 20
+                        ? recommendvideo.title.slice(0, 30) + ".."
+                        : recommendvideo.title}
+                    </div>
+                    <div className="text-xs">{recommendvideo.channelname}</div>
+                    <div className="text-xs">{recommendvideo.views}</div>
                   </div>
-                  <div className="text-xs">{recommendvideo.channelname}</div>
-                  <div className="text-xs">{recommendvideo.views}</div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
+          {/* </Link> */}
         </div>
       </div>
     </div>
