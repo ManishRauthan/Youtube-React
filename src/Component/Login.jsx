@@ -11,7 +11,7 @@ function Login({ onClose, onLogin }) {
       alert("Please fill all fields");
       return;
     }
-    fetch("http://localhost:5100/api/register", {
+    fetch("https://youtube-api-6auv.onrender.com/api/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ fullname, email: email.toLowerCase(), password }),
@@ -28,7 +28,7 @@ function Login({ onClose, onLogin }) {
   }
 
   function handleLogin() {
-    fetch("http://localhost:5100/api/login", {
+    fetch("https://youtube-api-6auv.onrender.com/api/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: email.toLowerCase(), password }),
