@@ -5,7 +5,7 @@ function useMychannelvideo() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5100/api/mychannel/videos")
+    fetch("https://youtube-api-6auv.onrender.com/api/mychannel/videos")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);

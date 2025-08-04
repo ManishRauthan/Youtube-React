@@ -5,7 +5,7 @@ function useHomepagevideo() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5100/api/videos")
+    fetch("https://youtube-api-6auv.onrender.com/api/videos")
       .then((response) => response.json())
       .then((data) => {
         // console.log(data);
